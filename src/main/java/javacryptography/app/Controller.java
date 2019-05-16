@@ -1,16 +1,21 @@
-package javacryptography.restService;
+package javacryptography.app;
 
 import java.security.KeyPair;
 
 import javax.xml.bind.DatatypeConverter;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javacryptography.app.service.EncryptionAlgorithm;
+import javacryptography.app.service.KeyGenerator;
 import javacryptography.block.asymmetric.RSAEncryption;
 
 @RestController
 public class Controller {
+	@Autowired
+	private KeyGenerator keyGenerator;
 
 	// Will need to call AsymmetricEncryptionUtils.generateRSAKeyPair() here
 	private static final RSAEncryption asymmetricEncryptionUtils = new RSAEncryption();
@@ -20,7 +25,7 @@ public class Controller {
 
 	@RequestMapping("/")
 	public String index() throws Exception {
-		KeyPair keyPair = asymmetricEncryptionUtils.generateRSAKeyPair();
+		KeyPair keyPair = keyGenerator.generateKeyPair(EncryptionAlgorithm.RSA);
 
 		return "<h1>Welcome to Cryptography Spring Application with Boot.</h1>"
 		        + "<h2>You will be issued a private key and a public key now... </h2>"

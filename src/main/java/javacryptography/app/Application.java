@@ -1,4 +1,4 @@
-package javacryptography.restService;
+package javacryptography.app;
 
 import java.util.Arrays;
 
