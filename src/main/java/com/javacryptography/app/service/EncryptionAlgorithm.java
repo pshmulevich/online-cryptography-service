@@ -1,4 +1,4 @@
-package javacryptography.app.service;
+package com.javacryptography.app.service;
 
 public enum EncryptionAlgorithm {
 

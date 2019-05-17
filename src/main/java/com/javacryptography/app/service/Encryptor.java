@@ -1,8 +1,8 @@
-package javacryptography.app.service;
+package com.javacryptography.app.service;
 
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
-import java.security.PrivateKey;
+import java.security.PublicKey;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
@@ -22,6 +22,6 @@ import javax.crypto.NoSuchPaddingException;
  * @throws exception
  */
 public interface Encryptor {
-	public byte[] performEncryption(EncryptionAlgorithm algorithm, String plainText, PrivateKey privateKey)
+	byte[] performEncryption(EncryptionAlgorithm algorithm, String plainText, PublicKey publicKey)
 	        throws InvalidKeyException, NoSuchAlgorithmException, NoSuchPaddingException, IllegalBlockSizeException, BadPaddingException;
 }

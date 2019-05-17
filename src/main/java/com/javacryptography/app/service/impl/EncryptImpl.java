@@ -1,8 +1,8 @@
-package javacryptography.app.service.impl;
+package com.javacryptography.app.service.impl;
 
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
-import java.security.PrivateKey;
+import java.security.PublicKey;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
@@ -11,17 +11,17 @@ import javax.crypto.NoSuchPaddingException;
 
 import org.springframework.stereotype.Service;
 
-import javacryptography.app.service.EncryptionAlgorithm;
-import javacryptography.app.service.Encryptor;
+import com.javacryptography.app.service.EncryptionAlgorithm;
+import com.javacryptography.app.service.Encryptor;
 
 @Service
 public class EncryptImpl implements Encryptor {
 
 	@Override
-	public byte[] performEncryption(EncryptionAlgorithm algorithm, String plainText, PrivateKey privateKey)
+	public byte[] performEncryption(EncryptionAlgorithm algorithm, String plainText, PublicKey publicKey)
 	        throws InvalidKeyException, NoSuchAlgorithmException, NoSuchPaddingException, IllegalBlockSizeException, BadPaddingException {
 		Cipher cipher = Cipher.getInstance(algorithm.name());
-		cipher.init(Cipher.ENCRYPT_MODE, privateKey);
+		cipher.init(Cipher.ENCRYPT_MODE, publicKey);
 		return cipher.doFinal(plainText.getBytes());
 	}
 

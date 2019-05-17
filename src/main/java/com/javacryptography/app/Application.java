@@ -1,4 +1,4 @@
-package javacryptography.app;
+package com.javacryptography.app;
 
 import java.util.Arrays;
 
