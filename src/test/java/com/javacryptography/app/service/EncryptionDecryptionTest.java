@@ -1,4 +1,4 @@
-package javacryptography.app.service;
+package com.javacryptography.app.service;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -38,11 +38,11 @@ public class EncryptionDecryptionTest {
 
 		String plainText = "This is a string for encryption";
 
-		byte[] cipherText = encryptor.performEncryption(EncryptionAlgorithm.RSA, plainText, keyPair.getPrivate());
+		byte[] cipherText = encryptor.performEncryption(EncryptionAlgorithm.RSA, plainText, keyPair.getPublic());
 		assertNotNull(cipherText);
 		System.out.println(DatatypeConverter.printHexBinary(cipherText));
 
-		String decryptedText = decryptor.performDecryption(EncryptionAlgorithm.RSA, cipherText, keyPair.getPublic());
+		String decryptedText = decryptor.performDecryption(EncryptionAlgorithm.RSA, cipherText, keyPair.getPrivate());
 		assertEquals(plainText, decryptedText);
 	}
 
