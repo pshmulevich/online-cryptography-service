@@ -1,4 +1,4 @@
-package javacryptography.block.asymmetric;
+package com.javacryptography.block.asymmetric;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -13,6 +13,8 @@ import javax.crypto.NoSuchPaddingException;
 import javax.xml.bind.DatatypeConverter;
 
 import org.junit.Test;
+
+import javacryptography.block.asymmetric.RSAEncryption;
 
 public class RSAEncryptionTest {
 

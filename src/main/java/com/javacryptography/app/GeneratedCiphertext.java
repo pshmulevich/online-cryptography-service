@@ -1,6 +1,7 @@
 package com.javacryptography.app;
 
 public class GeneratedCiphertext {
+	// TODO: need to rename all encryptedText mentions to ciphertext
 	private final String encryptedText;
 
 	public GeneratedCiphertext(String encryptedText) {
