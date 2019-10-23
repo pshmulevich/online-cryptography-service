@@ -1,4 +1,11 @@
-# Building a basic cryptographic Web Service with Spring Boot using REST
+# Building a basic cryptography Web Service with Spring Boot using REST
+
+### Diagram of project overview
+![alt text](/images/CryptographyRESTService.png)
+
+Click [here](https://github.com/pshmulevich/react-cryptography-ui) to see User Interface for this service.
+
+Live demo on [Heroku](https://cryptography-service-demo-ui.herokuapp.com/).
 
 ## Table of Contents
 ### #1: Setting up the REST service
